@@ -30,11 +30,7 @@ $(document).ready(function(){
     $('.main-container').hide();
     // $('#nickWrap').hide();
     
-    document.getElementById("new-room").onclick = function(){
-        $('#first-page').slideToggle();
-        // $('#nickWrap').show();
 
-    }
     
 
     var scrolled = false;
@@ -44,9 +40,7 @@ $(document).ready(function(){
             element.scrollTop = element.scrollHeight;
         }
     }
-    function sanitizeSoundObject(object) {
-        return object.replace("/\/", "");
-    }
+
 
     // END CLIENT-SIDE JS
 
@@ -56,8 +50,15 @@ $(document).ready(function(){
     
     var socket = io();
     socket.emit('index page');
-    $('#setUsername').submit(function(e) {
-        e.preventDefault();
+    // $('#setUsername').submit(function(e) {
+    //     e.preventDefault();
+        
+    // });
+    
+    document.getElementById("new-room").onclick = function(){
+        // $('#first-page').slideToggle();
+        // $('.main-container').show();
+        // $('#nickWrap').show();
         socket.emit('new user', $('#nickname').val(), function(data) {
             if (data) {
                 // console.log(data);
@@ -72,7 +73,8 @@ $(document).ready(function(){
             }
         });
         $('#nickname').val('');
-    });
+
+    }
 
 
     $('form').submit(function(){

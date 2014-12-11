@@ -29,33 +29,33 @@ var Message = {
             console.log("done with insert callback");
             console.log(crsr);
         });
-    },
-
-    getTotalUsers : function(){
-        // mongoDB.collection("totalUsers").find().sort({count: -1}).limit(1),
-        // function(err, crsr) {
-        //     if (err) console.log(err);
-        //     console.log("completed mongo get");
-            
-        //     console.log("done with get callback");
-        //     // console.log(crsr);
-        // });
-        // return mongoDB.collection("totalUsers").find().sort({count: -1}).limit(1);
-        
-        mongoDB.collection("totalUsers").find(
-            {count: 3}, 
-            {
-              upsert: true
-            }, 
-            function(err, crsr) {
-              if (err) {console.log("err");}
-              else {
-                // callback(crsr);
-                console.log("found the player");
-                // console.log("LOLOL");
-              }
-        });
     }
+
+    // getTotalUsers : function(){
+    //     // mongoDB.collection("totalUsers").find().sort({count: -1}).limit(1),
+    //     // function(err, crsr) {
+    //     //     if (err) console.log(err);
+    //     //     console.log("completed mongo get");
+            
+    //     //     console.log("done with get callback");
+    //     //     // console.log(crsr);
+    //     // });
+    //     // return mongoDB.collection("totalUsers").find().sort({count: -1}).limit(1);
+        
+    //     mongoDB.collection("totalUsers").find(
+    //         {count: 3}, 
+    //         {
+    //           upsert: true
+    //         }, 
+    //         function(err, crsr) {
+    //           if (err) {console.log("err");}
+    //           else {
+    //             // callback(crsr);
+    //             console.log("found the player");
+    //             // console.log("LOLOL");
+    //           }
+    //     });
+    // }
 
 
 

@@ -34,7 +34,7 @@ exports.init = function(io) {
         socket.on('index page', function(){
             console.log("index page event was hit");
             console.log("the message is: ");
-            var totalUsers = messageModel.getTotalUsers();
+            // var totalUsers = messageModel.getTotalUsers();
             console.log("the total users are: " + totalUsers);
             io.sockets.emit('index page', {users: totalUsers});
           
